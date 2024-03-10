@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct26ynl5t1gbe"]
+
+[ext_resource type="Script" path="res://Pig.gd" id="1_4dr6s"]
+[ext_resource type="Texture2D" uid="uid://bamt7af7o1u7f" path="res://pig.png" id="1_myl6q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uvhf0"]
+radius = 6.22514
+height = 19.0952
+
+[node name="World" type="Node"]
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Pig" type="Area2D" parent="."]
+position = Vector2(40.1431, 27.6577)
+script = ExtResource("1_4dr6s")
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Pig"]
+texture = ExtResource("1_myl6q")
+offset = Vector2(0, -4)
+hframes = 3
+
+[node name="Collision" type="CollisionShape2D" parent="Pig"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_uvhf0")
